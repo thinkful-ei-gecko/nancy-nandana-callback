@@ -7,7 +7,7 @@ export default function List(props){
     
     return(<section className="List">
     <header className="List-header">
-       {props.header}
+       <h2>{props.header}</h2>
     </header>
     <div className='List-cards'>
         {
@@ -20,6 +20,10 @@ export default function List(props){
             ))
        
         }
+        <button type="button" class="List-add-button">
+              + Add Random Card
+        </button>
+ 
     </div>
     </section>
     );

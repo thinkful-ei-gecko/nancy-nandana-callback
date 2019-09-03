@@ -4,11 +4,11 @@ import '../App.css'
 
 function App(props) {
   return (
-   <div className='main'> 
-    <header>
+   <main className='App'> 
+    <header className="App-header">
       <h1>Trelloyes</h1>
     </header>
-    <div className='list'>
+    <div className='App-list'>
     {
       props.store.lists.map(list => (
         <List 
@@ -24,7 +24,7 @@ function App(props) {
 
     </div>
 
-   </div>
+   </main>
   );
 }
 
