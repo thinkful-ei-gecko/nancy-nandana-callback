@@ -3,8 +3,10 @@ import Card from './Card'
 
 
 export default function List(props){
-    
-    
+
+    console.log('props passing into LIST', props)
+
+  
     return(<section className="List">
     <header className="List-header">
        <h2>{props.header}</h2>
@@ -14,13 +16,16 @@ export default function List(props){
             props.cards.map((card) => (
                 <Card 
                     key = {card.id}
+                    id= {card.id}
                     title = {card.title}
                     content = {card.content}
+                    onClickDelete = {props.onClickDelete}
                 />
             ))
        
         }
-        <button type="button" class="List-add-button">
+        <button type="button" onClick={ () => props.onClickAdd(props.id)
+            } className="List-add-button">
               + Add Random Card
         </button>
  
@@ -28,3 +33,7 @@ export default function List(props){
     </section>
     );
 }
+
+List.defaultProps = {
+    onClickAdd: () => {},
+  }
